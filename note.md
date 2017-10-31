@@ -1,9 +1,9 @@
 ROS
 ====
 ![ROS](http://www.ros.org/wp-content/uploads/2013/10/rosorg-logo1.png "ROS") 
-<link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
+<!-- <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
 <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
-<script >hljs.initHighlightingOnLoad();</script>
+<script >hljs.initHighlightingOnLoad();</script> -->
 
 ## 创建ROS程序包
 1. 创建一个文件夹`my_ws`作为工作区域，在文件夹里面再创建一个`src`文件夹，我们将在`src`文件夹里面创建ROS的包。
