@@ -58,11 +58,11 @@ ROS
 ## 编译ROS程序包
 1. 首先我们要source一下ROS的环境配置文件。
 
-    source /opt/ros/indigo/setup.bash
+        source /opt/ros/indigo/setup.bash
 2. 进入`my_ws`文件夹，使用命令`catkin_make`开始编译。
 
-    cd my_ws
-    catkin_make
+        cd my_ws
+        catkin_make
 ------
 ## [ROS的一些概念](http://www.guyuehome.com/229 "wiki")
 ### **node**
