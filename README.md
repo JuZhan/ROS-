@@ -10,11 +10,11 @@ ROS
 2. 进入`my_ws`文件夹，使用命令`catkin_make`创建一个catkin工作空间，然后进入`my_ws/src`使用命令`catkin_create_pkg`创建一个ROS程序包，这里就命名为`moving`。
     创建的命令如下：
 
-        mkdir -p ~/my_ws/src
-        cd my_ws
-        catkin_make
-        cd src
-        catkin_create_pkg moving rospy std_msgs geometry_msgs
+        $ mkdir -p ~/my_ws/src
+        $ cd my_ws
+        $ catkin_make
+        $ cd src
+        $ catkin_create_pkg moving rospy std_msgs geometry_msgs
 
     `catkin_create_pkg`后面的第一个参数是程序包的名字，后面的多个参数是依赖包的名字，依赖包是已经存在的程序包，`rospy`、`std_msgs`、`geometry_msgs`是我们这个`moving`里面将要用到的包，所以在创建的时候先声明好，不过我们也可以在`CMakeLists.txt`和`package.xml`里面修改我们要的依赖包。
 
@@ -58,11 +58,11 @@ ROS
 ## 编译ROS程序包
 1. 首先我们要source一下ROS的环境配置文件。
 
-        source /opt/ros/indigo/setup.bash
+        $ source /opt/ros/indigo/setup.bash
 2. 进入`my_ws`文件夹，使用命令`catkin_make`开始编译。
 
-        cd my_ws
-        catkin_make
+        $ cd my_ws
+        $ catkin_make
 ------
 ## [ROS的一些概念](http://www.guyuehome.com/229 "wiki")
 ### **node**
@@ -101,11 +101,11 @@ ROS需要有一个控制器可以使所有节点有条不紊的执行，这就�
 ### **一个简单的发布和接收**
 1. 回到前面我们创建的`my_ws`，进入`my_ws/src/moving`，创建一个`msg`文件夹和`scripts`文件夹，一个存放.msg文件，一个存放我们的python代码（直接在写`my_ws/src/moving/src/`也是OK的）
 
-        cd my_ws/src/moving
-        mkdir msg scripts
-        vi msg/hello.msg
-        vi scripts/talker.py
-        vi scripts/listener.py
+        $ cd my_ws/src/moving
+        $ mkdir msg scripts
+        $ vi msg/hello.msg
+        $ vi scripts/talker.py
+        $ vi scripts/listener.py
 > hello.msg
 >       
     string myData
@@ -194,18 +194,22 @@ ROS需要有一个控制器可以使所有节点有条不紊的执行，这就�
     )
 3. 回到我们的`my_ws`路径，重新编译一下
 
-        cd xxx/my_ws
-        catkin_make
+        $ cd xxx/my_ws
+        $ catkin_make
 
-4. 在跑我们的代码前，有个坑注意一下，我们创建的python文件有可能是不可运行的，所以要先更改一下权限
+4. 在跑我们的代码前，有个坑注意一下，我们创建的python文件有可能是不可运行的，所以要先更改一下权限，另外python文件好像不能有中文注释。
 
-        cd my_ws/src/moving/scripts
-        chmod +x *.py   # 将所有python文件改成可运行的
+        $ cd my_ws/src/moving/scripts
+        $ chmod +x *.py   # 将所有python文件改成可运行的
     然后要开启两个终端，一个运行`talker.py`，一个运行`listener.py`，每个终端都要运行下面的命令。
     ```
-    cd my_ws
-    source devel/setup.bash # 一定要跑这句话
-    cd src/moving/srcipts
+    $ cd my_ws
+    $ source devel/setup.bash # 一定要跑这句话
+    $ cd src/moving/srcipts
+    ```
+    然后一定要记得开启一个第三个终端，运行我们的`roscore`
+    ```
+    $ roscore
     ```
     完成上面的所有操作后，可以开始跑我们的代码了，总共有3种运行程序的方法：
     > 1. 直接运行
