@@ -33,7 +33,7 @@ ROS
                     package.xml     --> 修改程序包参数
                     src/            --> ROS预先创建的src文件夹
                     
-    > **package.xml里面的一些东西**
+    > **package.xml里面的一些东西（可能和实际生成结果有出入，不过能跑就行了）**
 
 
         <!-- catkin是创建工具 -->
@@ -156,7 +156,7 @@ ROS需要有一个控制器可以使所有节点有条不紊的执行，这就�
     from moving.msg import hello
 
     def callback(data):
-        rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.MyData)
+        rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.myData)
         
     def listener():
         # 这个节点就叫做“listener”
@@ -171,9 +171,62 @@ ROS需要有一个控制器可以使所有节点有条不紊的执行，这就�
     if __name__ == '__main__':
         listener()
 
-2. 写好上面的这些代码后，还需要重新编译一下，而且我们这里用到了自己写的msg，所以要在`my_ws/src/moving/CMakeLists.txt`里面修改一下编译的参数，具体内容如下：
+2. 写好上面的这些代码后，还需要重新编译一下，而且我们这里用到了自己写的msg，所以要在`my_ws/src/moving/CMakeLists.txt`里面修改一下编译的参数，`CmakeLists.txt`里面已经把可以写的参数都写在文件里面，并且把它们注释了，我们找到下面这几个参数，进行修改，具体内容如下，
 
 
+> CmakeLists.txt（要修改部分）
+>               
+    find_package( catkin REQUIRED COMPONENTS
+        message_generation # 记得加上这个
+        rospy
+    )
+
+    add_message_files(
+        FILES
+        hello.msg   # 我们用到了自己定义的hello.msg
+                    # 就是在这里声明的
+    )
+
+    generate_messages(
+        DEPENDENCIES
+        moving  # 这个是我们的ROS程序包的名字
+                # 因为我们要用到我们自己写的这个包里面的hello.msg文件
+    )
+3. 回到我们的`my_ws`路径，重新编译一下
+
+        cd xxx/my_ws
+        catkin_make
+
+4. 在跑我们的代码前，有个坑注意一下，我们创建的python文件有可能是不可运行的，所以要先更改一下权限
+
+        cd my_ws/src/moving/scripts
+        chmod +x *.py   # 将所有python文件改成可运行的
+    然后要开启两个终端，一个运行`talker.py`，一个运行`listener.py`，每个终端都要运行下面的命令。
+    ```
+    cd my_ws
+    source devel/setup.bash # 一定要跑这句话
+    cd src/moving/srcipts
+    ```
+    完成上面的所有操作后，可以开始跑我们的代码了，总共有3种运行程序的方法：
+    > 1. 直接运行
+    >
+    >>  终端1
+    >> ```
+    >> python talker.py
+    >> ```
+    >>  终端2
+    >> ```
+    >> python listener.py
+    >> ```
+    >
+    >> 终端1的输出结果
+    >> ```
+    >> python talker.py
+    >> ```
+    >> 终端2的输出结果
+    >> ```
+    >> python talker.py
+    >> ```
 
 
 
