@@ -101,11 +101,11 @@ ROS需要有一个控制器可以使所有节点有条不紊的执行，这就�
 ### **一个简单的发布和接收**
 1. 回到前面我们创建的`my_ws`，进入`my_ws/src/moving`，创建一个`msg`文件夹和`scripts`文件夹，一个存放.msg文件，一个存放我们的python代码（直接在写`my_ws/src/moving/src/`也是OK的）
 
-    cd my_ws/src/moving
-    mkdir msg scripts
-    vi msg/hello.msg
-    vi scripts/talker.py
-    vi scripts/listener.py
+        cd my_ws/src/moving
+        mkdir msg scripts
+        vi msg/hello.msg
+        vi scripts/talker.py
+        vi scripts/listener.py
 > hello.msg
 >       
     string myData
