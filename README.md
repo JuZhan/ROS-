@@ -195,78 +195,233 @@ ROS需要有一个控制器可以使所有节点有条不紊的执行，这就�
                 # 因为我们要用到我们自己写的这个包里面的hello.msg文件
     )
 3. 回到我们的`my_ws`路径，重新编译一下
-
-        $ cd xxx/my_ws
-        $ catkin_make
-
+    ```
+    $ cd xxx/my_ws
+    $ catkin_make
+    ```
 4. 在跑我们的代码前，有个坑注意一下，我们创建的python文件有可能是不可运行的，所以要先更改一下权限。
 
-        $ cd my_ws/src/moving/scripts
-        $ chmod +x *.py   # 将所有python文件改成可运行的
+    ```
+    $ cd my_ws/src/moving/scripts
+    $ chmod +x *.py   # 将所有python文件改成可运行的
+    ```
     然后要开启两个终端，一个运行`talker.py`，一个运行`listener.py`，每个终端都要运行下面的命令。
     ```
     $ cd my_ws
     $ source devel/setup.bash # 一定要跑这句话
     $ cd src/moving/srcipts
     ```
-    然后一定要记得开启一个第三个终端，运行我们的`roscore`
+    然后一定要记得开启一个 **第三个终端**，运行我们的`roscore`
     ```
     $ roscore
     ```
-    完成上面的所有操作后，可以开始跑我们的代码了，总共有3种运行程序的方法：
-    > 1. 直接运行
+5. 完成上面的所有操作后，可以开始跑我们的代码了，总共有3种运行程序的方法：
+    1. 使用`python`运行
     >
-    >>  终端1
-    >> ```
-    >> python talker.py
-    >> ```
-    >>  终端2
-    >> ```
-    >> python listener.py
-    >> ```
+    >  终端1
+    > ```
+    > python talker.py
+    > ```
+    >  终端2
+    > ```
+    > python listener.py
+    > ```
     >
-    >> 终端1的输出结果
-    >> ```
-    >> [INFO] [WallTime: 1510127122.377361]   hello
-    >> [INFO] [WallTime: 1510127122.477398]   hello
-    >> [INFO] [WallTime: 1510127122.577426]   hello
-    >> [INFO] [WallTime: 1510127122.677380]   hello
-    >> [INFO] [WallTime: 1510127122.777345]   hello
-    >> [INFO] [WallTime: 1510127122.877358]   hello
-    >> [INFO] [WallTime: 1510127122.977358]   hello
-    >> [INFO] [WallTime: 1510127123.077362]   hello
-    >> [INFO] [WallTime: 1510127123.177419]   hello
-    >> [INFO] [WallTime: 1510127123.277348]   hello
-    >> [INFO] [WallTime: 1510127123.377363]   hello
-    >> [INFO] [WallTime: 1510127123.477353]   hello
-    >> [INFO] [WallTime: 1510127123.577346]   hello
-    >> [INFO] [WallTime: 1510127123.677302]   hello
-    >> [INFO] [WallTime: 1510127123.777298]   hello
-    >> [INFO] [WallTime: 1510127123.877360]   hello
-    >> ...
-    >> ```
-    >> 终端2的输出结果
-    >> ```
-    >> [INFO] [WallTime: 1510127120.878118] /listener_27769_1510127115970  ==> I heard   hello
-    >> [INFO] [WallTime: 1510127120.978094] /listener_27769_1510127115970  ==> I heard   hello
-    >> [INFO] [WallTime: 1510127121.078180] /listener_27769_1510127115970  ==> I heard   hello
-    >> [INFO] [WallTime: 1510127121.178131] /listener_27769_1510127115970  ==> I heard   hello
-    >> [INFO] [WallTime: 1510127121.278213] /listener_27769_1510127115970  ==> I heard   hello
-    >> [INFO] [WallTime: 1510127121.378392] /listener_27769_1510127115970  ==> I heard   hello
-    >> [INFO] [WallTime: 1510127121.478166] /listener_27769_1510127115970  ==> I heard   hello
-    >> [INFO] [WallTime: 1510127121.578136] /listener_27769_1510127115970  ==> I heard   hello
-    >> [INFO] [WallTime: 1510127121.678163] /listener_27769_1510127115970  ==> I heard   hello
-    >> [INFO] [WallTime: 1510127121.778169] /listener_27769_1510127115970  ==> I heard   hello
-    >> [INFO] [WallTime: 1510127121.878124] /listener_27769_1510127115970  ==> I heard   hello
-    >> [INFO] [WallTime: 1510127121.978157] /listener_27769_1510127115970  ==> I heard   hello
-    >> [INFO] [WallTime: 1510127122.078196] /listener_27769_1510127115970  ==> I heard   hello
-    >> [INFO] [WallTime: 1510127122.178300] /listener_27769_1510127115970  ==> I heard   hello
-    >> [INFO] [WallTime: 1510127122.278211] /listener_27769_1510127115970  ==> I heard   hello
-    >> [INFO] [WallTime: 1510127122.378174] /listener_27769_1510127115970  ==> I heard   hello
-    >> ...
-    >> ```
+    > 终端1的输出结果
+    > ```
+    > [INFO] [WallTime: 1510127122.377361]   hello
+    > [INFO] [WallTime: 1510127122.477398]   hello
+    > [INFO] [WallTime: 1510127122.577426]   hello
+    > [INFO] [WallTime: 1510127122.677380]   hello
+    > [INFO] [WallTime: 1510127122.777345]   hello
+    > [INFO] [WallTime: 1510127122.877358]   hello
+    > [INFO] [WallTime: 1510127122.977358]   hello
+    > [INFO] [WallTime: 1510127123.077362]   hello
+    > [INFO] [WallTime: 1510127123.177419]   hello
+    > [INFO] [WallTime: 1510127123.277348]   hello
+    > [INFO] [WallTime: 1510127123.377363]   hello
+    > [INFO] [WallTime: 1510127123.477353]   hello
+    > [INFO] [WallTime: 1510127123.577346]   hello
+    > [INFO] [WallTime: 1510127123.677302]   hello
+    > [INFO] [WallTime: 1510127123.777298]   hello
+    > [INFO] [WallTime: 1510127123.877360]   hello
+    > ...
+    > ```
+    > 终端2的输出结果
+    > ```
+    > [INFO] [WallTime: 1510127120.878118] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127120.978094] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.078180] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.178131] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.278213] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.378392] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.478166] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.578136] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.678163] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.778169] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.878124] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.978157] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127122.078196] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127122.178300] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127122.278211] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127122.378174] /listener_27769_1510127115970  ==> I heard   hello
+    > ...
+    > ```
+    2. 使用`rosrun`
+    > 首先我们要先`source`一下我们的ROS程序包，以确保ROS可以找到我们写的ROS程序包
+    >```
+    > $ cd xxx/my_ws
+    > $ source devel/setup.bash 
+    >```
+    >
+    >  终端1 (如果运行提示说找不到该文件的话，要么你没有source这个包，要么你的python文件不可运行，要把它修改为可运行文件，参考前面第4步对python文件的修改操作)
+    > ```
+    > rosrun moving talker.py
+    > ```
+    >  终端2
+    > ```
+    > rosrun moving listener.py
+    > ```
+    > 终端1的输出结果
+    > ```
+    > [INFO] [WallTime: 1510127122.377361]   hello
+    > [INFO] [WallTime: 1510127122.477398]   hello
+    > [INFO] [WallTime: 1510127122.577426]   hello
+    > [INFO] [WallTime: 1510127122.677380]   hello
+    > [INFO] [WallTime: 1510127122.777345]   hello
+    > [INFO] [WallTime: 1510127122.877358]   hello
+    > [INFO] [WallTime: 1510127122.977358]   hello
+    > [INFO] [WallTime: 1510127123.077362]   hello
+    > [INFO] [WallTime: 1510127123.177419]   hello
+    > [INFO] [WallTime: 1510127123.277348]   hello
+    > [INFO] [WallTime: 1510127123.377363]   hello
+    > [INFO] [WallTime: 1510127123.477353]   hello
+    > [INFO] [WallTime: 1510127123.577346]   hello
+    > [INFO] [WallTime: 1510127123.677302]   hello
+    > [INFO] [WallTime: 1510127123.777298]   hello
+    > [INFO] [WallTime: 1510127123.877360]   hello
+    > ...
+    > ```
+    > 终端2的输出结果
+    > ```
+    > [INFO] [WallTime: 1510127120.878118] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127120.978094] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.078180] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.178131] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.278213] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.378392] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.478166] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.578136] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.678163] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.778169] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.878124] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.978157] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127122.078196] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127122.178300] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127122.278211] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127122.378174] /listener_27769_1510127115970  ==> I heard   hello
+    > ...
+    > ```
+    3. 使用`roslaunch`
+    > 要用这个方法的话我们也是要要先`source`一下我们的ROS程序包，以确保ROS可以找到我们写的ROS程序包，而且对于每个新开启的命令行，如果要使用这个ROS程序包的话，都要记得`source`一下这个ROS程序包的`setup.bash`
+    >```
+    > $ cd xxx/my_ws
+    > $ source devel/setup.bash 
+    >```
+    > 然后我们要编写一个`talk.launch`，其实名字随你便，重要的是后缀名为”`.launch`“。
+    > 
+    > `launch`文件其实就是一个`XML`语言格式的文本，里面定义了你要跑的各个节点和参数信息，如果要同时运行多个node，这是最好的选择。
+    > ```
+    > $ cd xxx/my_ws/src/moving
+    > $ mkdir launch
+    > $ cd launch
+    > $ vi talk.launch
+    > $ vi listen.launch
+    > ```
+    > talk.launch
+    > ```
+    > <launch>
+    >       <!-- 这个文件运行的是talker.py -->
+    >       <node pkg="moving" type="talker.py" name="ListenToMe" />
+    ></launch>
+    >  ```
+    >
+    > listen.launch
+    > ```
+    > <launch>
+    >       <!-- 这个文件运行的是listener.py -->
+    >       <node pkg="moving" type="listener.py" name="IAmListening" />
+    ></launch>
+    >  ```
+    >  终端1 (如果运行提示说找不到该文件的话，要么你没有source这个包，要么你的python文件不可运行，要把它修改为可运行文件，参考前面第4步对python文件的修改操作)
+    > ```
+    > roslaunch moving talk.launch
+    > ```
+    >  终端2
+    > ```
+    > roslaunch moving listen.launch
+    > ```
+    > 终端1的输出结果
+    > ```
+    > ... logging to /home/juzhan/.ros/log/4b3a7bf2-c922-11e7-a593-1866da390d4f/roslaunch-moha-14654.log
+    > Checking log directory for disk usage. This may take awhile.
+    > Press Ctrl-C to interrupt
+    > Done checking log file disk usage. Usage is <1GB.
+    > 
+    > started roslaunch server http://localhost:43385/
+    > 
+    > SUMMARY
+    > ========
+    > 
+    > PARAMETERS
+    >  * /rosdistro: indigo
+    >  * /rosversion: 1.11.21
+    > 
+    > NODES
+    >   /
+    >     TalkerIsTalking (moving/talker.py)
+    > 
+    > ROS_MASTER_URI=http://localhost:11311
+    > 
+    > core service [/rosout] found
+    > process[TalkerIsTalking-1]: started with pid [14674]
+    > ^C[TalkerIsTalking-1] killing on exit
+    > shutting down processing monitor...
+    > ... shutting down processing monitor complete
+    > 
+    > ```
+    > 终端2的输出结果
+    > ```
+    > ... logging to /home/juzhan/.ros/log/4b3a7bf2-c922-11e7-a593-1866da390d4f/roslaunch-moha-15533.log
+    > Checking log directory for disk usage. This may take awhile.
+    > Press Ctrl-C to interrupt
+    > Done checking log file disk usage. Usage is <1GB.
+    > 
+    > started roslaunch server http://localhost:32896/
+    > 
+    > SUMMARY
+    > ========
+    > 
+    > PARAMETERS
+    >  * /rosdistro: indigo
+    >  * /rosversion: 1.11.21
+    > 
+    > NODES
+    >   /
+    >     IAmListening (moving/listener.py)
+    > 
+    > ROS_MASTER_URI=http://localhost:11311
+    > 
+    > core service [/rosout] found
+    > process[IAmListening-1]: started with pid [15551]
+    > ^C[IAmListening-1] killing on exit
+    > shutting down processing monitor...
+    > ... shutting down processing monitor complete
+    > 
+    > ```
+6. 你会发现用`roslaunch`的结果不太对劲，我也第一次运行这个，反正这是在运行中的node，不信你自己用`rosnode`和`rostopic`去看看，看了`roslaunch`在这种情况下不太实用，不过在控制机器人的运行的那些程序用`roslaunch`就挺好的。
 
-
+# todo
 
 
 
@@ -281,9 +436,9 @@ ROS需要有一个控制器可以使所有节点有条不紊的执行，这就�
 + asd
     > asd 
 > [GOOGLE](https://google.com/ "google")
->> asd 
->>> 1. as
->>> 2. as
+> asd 
+>> 1. as
+>> 2. as
 
     #include <iostream>
     int main(){
