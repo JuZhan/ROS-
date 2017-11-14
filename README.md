@@ -113,6 +113,7 @@ ROS需要有一个控制器可以使所有节点有条不紊的执行，这就�
 > talker.py (Publisher)
 >       
     #!/usr/bin/env python
+    # -*- coding=UTF-8 -*-
     import rospy
     # 也可以直接用我们的依赖包std_msgs里面定义好的String.msg文件
     # 用 "rosmsg show std_msgs/String"可以看到String里面定义的和我们的一样
@@ -133,7 +134,7 @@ ROS需要有一个控制器可以使所有节点有条不紊的执行，这就�
         rate = rospy.Rate(10) # 10hz
         # 当我们没有结束程序的时候，一直发布信息
         while not rospy.is_shutdown():
-            hello_str = "hello"
+            hello_str = " hello"
             # loginfo是打印运行信息的语句（好像包含时间戳什么的？），当成ROS的cout就行了
             rospy.loginfo(hello_str)
             # 这里我们的发布者pub发布信息hello_str
@@ -152,11 +153,12 @@ ROS需要有一个控制器可以使所有节点有条不紊的执行，这就�
 > listener.py (Subscriber)
 >       
     #!/usr/bin/env python
+    # -*- coding=UTF-8 -*-
     import rospy
     from moving.msg import hello
 
     def callback(data):
-        rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.myData)
+        rospy.loginfo(rospy.get_caller_id() + " ==> I heard %s", data.myData)
         
     def listener():
         # 这个节点就叫做“listener”
@@ -197,7 +199,7 @@ ROS需要有一个控制器可以使所有节点有条不紊的执行，这就�
         $ cd xxx/my_ws
         $ catkin_make
 
-4. 在跑我们的代码前，有个坑注意一下，我们创建的python文件有可能是不可运行的，所以要先更改一下权限，另外python文件好像不能有中文注释。
+4. 在跑我们的代码前，有个坑注意一下，我们创建的python文件有可能是不可运行的，所以要先更改一下权限。
 
         $ cd my_ws/src/moving/scripts
         $ chmod +x *.py   # 将所有python文件改成可运行的
@@ -225,11 +227,43 @@ ROS需要有一个控制器可以使所有节点有条不紊的执行，这就�
     >
     >> 终端1的输出结果
     >> ```
-    >> python talker.py
+    >> [INFO] [WallTime: 1510127122.377361]   hello
+    >> [INFO] [WallTime: 1510127122.477398]   hello
+    >> [INFO] [WallTime: 1510127122.577426]   hello
+    >> [INFO] [WallTime: 1510127122.677380]   hello
+    >> [INFO] [WallTime: 1510127122.777345]   hello
+    >> [INFO] [WallTime: 1510127122.877358]   hello
+    >> [INFO] [WallTime: 1510127122.977358]   hello
+    >> [INFO] [WallTime: 1510127123.077362]   hello
+    >> [INFO] [WallTime: 1510127123.177419]   hello
+    >> [INFO] [WallTime: 1510127123.277348]   hello
+    >> [INFO] [WallTime: 1510127123.377363]   hello
+    >> [INFO] [WallTime: 1510127123.477353]   hello
+    >> [INFO] [WallTime: 1510127123.577346]   hello
+    >> [INFO] [WallTime: 1510127123.677302]   hello
+    >> [INFO] [WallTime: 1510127123.777298]   hello
+    >> [INFO] [WallTime: 1510127123.877360]   hello
+    >> ...
     >> ```
     >> 终端2的输出结果
     >> ```
-    >> python talker.py
+    >> [INFO] [WallTime: 1510127120.878118] /listener_27769_1510127115970  ==> I heard   hello
+    >> [INFO] [WallTime: 1510127120.978094] /listener_27769_1510127115970  ==> I heard   hello
+    >> [INFO] [WallTime: 1510127121.078180] /listener_27769_1510127115970  ==> I heard   hello
+    >> [INFO] [WallTime: 1510127121.178131] /listener_27769_1510127115970  ==> I heard   hello
+    >> [INFO] [WallTime: 1510127121.278213] /listener_27769_1510127115970  ==> I heard   hello
+    >> [INFO] [WallTime: 1510127121.378392] /listener_27769_1510127115970  ==> I heard   hello
+    >> [INFO] [WallTime: 1510127121.478166] /listener_27769_1510127115970  ==> I heard   hello
+    >> [INFO] [WallTime: 1510127121.578136] /listener_27769_1510127115970  ==> I heard   hello
+    >> [INFO] [WallTime: 1510127121.678163] /listener_27769_1510127115970  ==> I heard   hello
+    >> [INFO] [WallTime: 1510127121.778169] /listener_27769_1510127115970  ==> I heard   hello
+    >> [INFO] [WallTime: 1510127121.878124] /listener_27769_1510127115970  ==> I heard   hello
+    >> [INFO] [WallTime: 1510127121.978157] /listener_27769_1510127115970  ==> I heard   hello
+    >> [INFO] [WallTime: 1510127122.078196] /listener_27769_1510127115970  ==> I heard   hello
+    >> [INFO] [WallTime: 1510127122.178300] /listener_27769_1510127115970  ==> I heard   hello
+    >> [INFO] [WallTime: 1510127122.278211] /listener_27769_1510127115970  ==> I heard   hello
+    >> [INFO] [WallTime: 1510127122.378174] /listener_27769_1510127115970  ==> I heard   hello
+    >> ...
     >> ```
 
 
