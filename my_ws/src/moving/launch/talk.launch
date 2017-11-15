@@ -1,0 +1,4 @@
+<launch>
+    <!-- 这个文件运行的是talker.py -->
+    <node pkg="moving" type="talker.py" name="TalkerIsTalking" />
+</launch>

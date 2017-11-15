@@ -1,0 +1,8 @@
+prefix=/home/juzhan/ros/workspace/my_ws/install
+
+Name: moving
+Description: Description of moving
+Version: 0.0.0
+Cflags: -I/home/juzhan/ros/workspace/my_ws/install/include
+Libs: -L/home/juzhan/ros/workspace/my_ws/install/lib 
+Requires: 
