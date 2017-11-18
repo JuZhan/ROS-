@@ -406,8 +406,8 @@ clean: moving/CMakeFiles/moving_gencpp.dir/clean
 
 # All Build rule for target.
 moving/CMakeFiles/moving_generate_messages.dir/all: moving/CMakeFiles/moving_generate_messages_cpp.dir/all
-moving/CMakeFiles/moving_generate_messages.dir/all: moving/CMakeFiles/moving_generate_messages_lisp.dir/all
 moving/CMakeFiles/moving_generate_messages.dir/all: moving/CMakeFiles/moving_generate_messages_py.dir/all
+moving/CMakeFiles/moving_generate_messages.dir/all: moving/CMakeFiles/moving_generate_messages_lisp.dir/all
 	$(MAKE) -f moving/CMakeFiles/moving_generate_messages.dir/build.make moving/CMakeFiles/moving_generate_messages.dir/depend
 	$(MAKE) -f moving/CMakeFiles/moving_generate_messages.dir/build.make moving/CMakeFiles/moving_generate_messages.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/juzhan/ros/workspace/my_ws/build/CMakeFiles 
