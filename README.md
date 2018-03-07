@@ -1,3 +1,12 @@
+### 如果要运行提供的代码
+clone下代码后，要先在文件夹my_ws路径下运行`catkin_make`，然后就可以运行程序了。
+    命令如下：
+
+        $ git clone https://github.com/JuZhan/ROS-.git
+        $ cd ROS-/my_ws
+        $ catkin_make
+        $ # 开始操作
+
 ROS
 ====
 ![ROS](http://www.ros.org/wp-content/uploads/2013/10/rosorg-logo1.png "ROS") 
