@@ -342,7 +342,7 @@ ROS需要有一个控制器可以使所有节点有条不紊的执行，这就�
     > ```
     > <launch>
     >       <!-- 这个文件运行的是talker.py -->
-    >       <node pkg="moving" type="talker.py" name="ListenToMe" />
+    >       <node pkg="moving" type="talker.py" name="ListenToMe" output="screen"/>
     ></launch>
     >  ```
     >
@@ -350,7 +350,7 @@ ROS需要有一个控制器可以使所有节点有条不紊的执行，这就�
     > ```
     > <launch>
     >       <!-- 这个文件运行的是listener.py -->
-    >       <node pkg="moving" type="listener.py" name="IAmListening" />
+    >       <node pkg="moving" type="listener.py" name="IAmListening" output="screen"/>
     ></launch>
     >  ```
     >  终端1 (如果运行提示说找不到该文件的话，要么你没有source这个包，要么你的python文件不可运行，要把它修改为可运行文件，参考前面第4步对python文件的修改操作)

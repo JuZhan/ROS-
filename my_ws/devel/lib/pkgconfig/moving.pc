@@ -1,8 +1,0 @@
-prefix=/home/juzhan/ros/workspace/my_ws/devel
-
-Name: moving
-Description: Description of moving
-Version: 0.0.0
-Cflags: -I/home/juzhan/ros/workspace/my_ws/devel/include
-Libs: -L/home/juzhan/ros/workspace/my_ws/devel/lib 
-Requires: 

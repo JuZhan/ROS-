@@ -1,2 +1,0 @@
-moving
--DCATKIN_DEVEL_PREFIX=/home/juzhan/ros/workspace/my_ws/devel -DCMAKE_INSTALL_PREFIX=/home/juzhan/ros/workspace/my_ws/install -G Unix Makefiles

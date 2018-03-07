@@ -1,4 +1,4 @@
 <launch>
     <!-- 这个文件运行的是listener.py -->
-    <node pkg="moving" type="listener.py" name="IAmListening" />
+    <node pkg="moving" type="listener.py" name="IAmListening" output="screen" />
 </launch>
