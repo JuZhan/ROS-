@@ -363,63 +363,44 @@ ROS需要有一个控制器可以使所有节点有条不紊的执行，这就�
     > ```
     > 终端1的输出结果
     > ```
-    > ... logging to /home/juzhan/.ros/log/4b3a7bf2-c922-11e7-a593-1866da390d4f/roslaunch-moha-14654.log
-    > Checking log directory for disk usage. This may take awhile.
-    > Press Ctrl-C to interrupt
-    > Done checking log file disk usage. Usage is <1GB.
-    > 
-    > started roslaunch server http://localhost:43385/
-    > 
-    > SUMMARY
-    > ========
-    > 
-    > PARAMETERS
-    >  * /rosdistro: indigo
-    >  * /rosversion: 1.11.21
-    > 
-    > NODES
-    >   /
-    >     TalkerIsTalking (moving/talker.py)
-    > 
-    > ROS_MASTER_URI=http://localhost:11311
-    > 
-    > core service [/rosout] found
-    > process[TalkerIsTalking-1]: started with pid [14674]
-    > ^C[TalkerIsTalking-1] killing on exit
-    > shutting down processing monitor...
-    > ... shutting down processing monitor complete
-    > 
+    > [INFO] [WallTime: 1510127122.377361]   hello
+    > [INFO] [WallTime: 1510127122.477398]   hello
+    > [INFO] [WallTime: 1510127122.577426]   hello
+    > [INFO] [WallTime: 1510127122.677380]   hello
+    > [INFO] [WallTime: 1510127122.777345]   hello
+    > [INFO] [WallTime: 1510127122.877358]   hello
+    > [INFO] [WallTime: 1510127122.977358]   hello
+    > [INFO] [WallTime: 1510127123.077362]   hello
+    > [INFO] [WallTime: 1510127123.177419]   hello
+    > [INFO] [WallTime: 1510127123.277348]   hello
+    > [INFO] [WallTime: 1510127123.377363]   hello
+    > [INFO] [WallTime: 1510127123.477353]   hello
+    > [INFO] [WallTime: 1510127123.577346]   hello
+    > [INFO] [WallTime: 1510127123.677302]   hello
+    > [INFO] [WallTime: 1510127123.777298]   hello
+    > [INFO] [WallTime: 1510127123.877360]   hello
+    > ...
     > ```
     > 终端2的输出结果
     > ```
-    > ... logging to /home/juzhan/.ros/log/4b3a7bf2-c922-11e7-a593-1866da390d4f/roslaunch-moha-15533.log
-    > Checking log directory for disk usage. This may take awhile.
-    > Press Ctrl-C to interrupt
-    > Done checking log file disk usage. Usage is <1GB.
-    > 
-    > started roslaunch server http://localhost:32896/
-    > 
-    > SUMMARY
-    > ========
-    > 
-    > PARAMETERS
-    >  * /rosdistro: indigo
-    >  * /rosversion: 1.11.21
-    > 
-    > NODES
-    >   /
-    >     IAmListening (moving/listener.py)
-    > 
-    > ROS_MASTER_URI=http://localhost:11311
-    > 
-    > core service [/rosout] found
-    > process[IAmListening-1]: started with pid [15551]
-    > ^C[IAmListening-1] killing on exit
-    > shutting down processing monitor...
-    > ... shutting down processing monitor complete
-    > 
+    > [INFO] [WallTime: 1510127120.878118] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127120.978094] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.078180] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.178131] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.278213] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.378392] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.478166] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.578136] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.678163] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.778169] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.878124] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127121.978157] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127122.078196] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127122.178300] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127122.278211] /listener_27769_1510127115970  ==> I heard   hello
+    > [INFO] [WallTime: 1510127122.378174] /listener_27769_1510127115970  ==> I heard   hello
+    > ...
     > ```
-6. 你会发现用`roslaunch`的结果不太对劲，我也第一次运行这个，反正这是在运行中的node，不信你自己用`rosnode`和`rostopic`去看看，看了`roslaunch`在这种情况下不太实用，不过在控制机器人的运行的那些程序用`roslaunch`就挺好的。
 
 # todo
 
