@@ -1,8 +1,7 @@
 # Fetch Gazebo 7 for indigo
 
 ### 安装
-ros-indigo自带的本来是Gazebo2
-但是Gazebo中自己导入obj文件的功能只在Gazebo7以上的版本才出现，所以根据下面的指导我卸载了Gazebo2
+ros-indigo自带的本来是Gazebo2，但是Gazebo中自己导入obj文件的功能只在Gazebo7以上的版本才出现，所以根据下面的指导我卸载了Gazebo2
 > https://stackoverflow.com/questions/48376105/cannot-download-ros-gazebo-7-packages-for-indigo
 
 
