@@ -2,16 +2,15 @@
 
 ### 安装
 ros-indigo自带的本来是Gazebo2，但是Gazebo中自己导入obj文件的功能只在Gazebo7以上的版本才出现，所以根据下面的指导我卸载了Gazebo2
-> https://stackoverflow.com/questions/48376105/cannot-download-ros-gazebo-7-packages-for-indigo
-
-> https://github.com/AUV-IITK/AUVWiki/wiki/Installing-Gazebo7-with-ROS-Indigo
+> http://www.laomn.com/article/item/62213
 
 
-比较重要的是下面的几句命令：
+比较重要的是下面的几句命令（不过还算乖乖看上面的指导）：
 
  ```
  sudo apt-get remove gazebo2*  # 我是直接gazebo2
  ---------------
+ sudo apt-get install gazebo7
  sudo apt-get install ros-indigo-gazebo7-ros-pkgs
 # 这个就安装了Gazebo7
  ```
