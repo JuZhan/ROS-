@@ -1,5 +1,7 @@
 
 关于openRAVE中获取图片的问题
+
+### couldn't create GLX context
 > https://askubuntu.com/questions/745135/how-to-enable-indirect-glx-contexts-iglx-in-ubuntu-14-04-lts-with-nvidia-gfx/747088
 
 > https://github.com/roboticslab-uc3m/openrave-yarp-plugins/issues/48
