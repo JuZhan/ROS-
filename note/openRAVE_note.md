@@ -1,6 +1,5 @@
 
-关于openRAVE中获取图片的问题
-
+## 关于openRAVE中获取图片的问题
 ### couldn't create GLX context
 > https://askubuntu.com/questions/745135/how-to-enable-indirect-glx-contexts-iglx-in-ubuntu-14-04-lts-with-nvidia-gfx/747088
 
@@ -18,5 +17,12 @@ EndSection
 ```
 export COIN_FULL_INDIRECT_RENDERING=1
 ```
-
 ok
+
+## openRAVE中使用flashLidar获取点云会卡顿
+
+1. 官方的代码里面有提供显示激光效果的设置
+```
+sensor.Configure(Sensor.ConfigureCommand.RenderDataOn)
+```
+2. 不用就行了
