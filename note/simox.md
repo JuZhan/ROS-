@@ -15,3 +15,4 @@ sudo make install
 ```
 
 3. Install simox-cgal
+attention: you may need to run `sudo make install` in `simox-cgal` folder every day.:beer:
