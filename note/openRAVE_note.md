@@ -3,8 +3,7 @@
 ### couldn't create GLX context
 > https://askubuntu.com/questions/745135/how-to-enable-indirect-glx-contexts-iglx-in-ubuntu-14-04-lts-with-nvidia-gfx/747088
 
-> https://github.com/roboticslab-uc3m/openrave-yarp-plugins/issues/48
-
+0. new: 还要跟这个改应该就ok了 https://github.com/roboticslab-uc3m/openrave-yarp-plugins/issues/48
 1. 显卡驱动换做nvidia
 2. 我后面在 `/usr/share/X11/xorg.conf.d/` 下面的nvidia文件夹下写入的配置：
 ```
