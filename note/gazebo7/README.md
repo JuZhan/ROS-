@@ -5,7 +5,7 @@ ros-indigo自带的本来是Gazebo2，但是Gazebo中自己导入obj文件的功
 > http://www.laomn.com/article/item/62213
 
 
-比较重要的是下面的几句命令（不过还算乖乖看上面的指导）：
+~~比较重要的是下面的几句命令（不过还算乖乖看上面的指导）：
 
  ```
  sudo apt-get remove gazebo2*  # 我是直接gazebo2
@@ -13,7 +13,7 @@ ros-indigo自带的本来是Gazebo2，但是Gazebo中自己导入obj文件的功
  sudo apt-get install gazebo7
  sudo apt-get install ros-indigo-gazebo7-ros-pkgs
 # 这个就安装了Gazebo7
- ```
+```~~
 但是这样会把fetch_gazebo的ROS包都一起被删除，由于Gazebo7的存在，Fetch官方提供的包不能直接下载和使用。
 
 不过他们有提供不同版本的Gazebo下的包（虽然只给Gazebo2提供了命令行下载），链接如下，clone下来后将branch切换为gazebo7就行了（注意是origin/gazebo7，不是0.7.0那些分支）。
