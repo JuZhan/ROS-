@@ -11,20 +11,20 @@ xserver-command=X -core +iglx
 ```
 After which you either reboot or Ctrl-Alt-F1, login, and 'sudo service lightdm restart'.
 
-
-0. new: 还要跟这个改应该就ok了 https://github.com/roboticslab-uc3m/openrave-yarp-plugins/issues/48
-1. 显卡驱动换做nvidia
-2. 我后面在 `/usr/share/X11/xorg.conf.d/` 下面的nvidia文件夹下写入的配置：
-```
-Section "ServerFlags"  
-   Option "AllowIndirectGLX" "on"  
-   Option "IndirectGLX" "on"  
-EndSection
-```
-3. 最后在环境变量里面加入这句
-```
-export COIN_FULL_INDIRECT_RENDERING=1
-```
+应该没用了：
+   0. new: 还要跟这个改应该就ok了 https://github.com/roboticslab-uc3m/openrave-yarp-plugins/issues/48
+   1. 显卡驱动换做nvidia
+   2. 我后面在 `/usr/share/X11/xorg.conf.d/` 下面的nvidia文件夹下写入的配置：
+   ```
+   Section "ServerFlags"  
+      Option "AllowIndirectGLX" "on"  
+      Option "IndirectGLX" "on"  
+   EndSection
+   ```
+   3. 最后在环境变量里面加入这句
+   ```
+   export COIN_FULL_INDIRECT_RENDERING=1
+   ```
 ok
 
 ## openRAVE中使用flashLidar获取点云会卡顿
