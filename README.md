@@ -7,9 +7,9 @@
 ----
 ### [ROS初始教程的项目](./note/ros_start.md)
 
-### [OpenRAVE记录](./note/OpenRAVE_note.md) 
+### [OpenRAVE](./note/OpenRAVE_note.md) 
 
-### [Gazebo记录](./note/gazebo7/README.md)
+### [Gazebo](./note/gazebo7/README.md)
 
 ### [Simox](./note/simox.md)
 
