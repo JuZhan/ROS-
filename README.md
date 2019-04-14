@@ -12,3 +12,5 @@
 ### [Gazebo记录](./note/gazebo7/README.md)
 
 ### [Simox](./note/simox.md)
+
+### [Rviz](./note/rviz.md)
