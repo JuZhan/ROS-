@@ -25,3 +25,14 @@ ros-indigo自带的本来是Gazebo2，但是Gazebo中自己导入obj文件的功
 如果是临时用的包，就直接克隆到自己的开发项目里面用就行。
 
 如果要长期使用的，我是创建了一个空白ros项目，然后将```fetch_gazebo```的代码克隆下来，```catkin_make```后，将这个项目路径写入```.bashrc```里（暂不清楚怎么安装本地的包）。
+
+### 可能的问题
+
+    ResourceNotFound: rgbd_launch
+    ROS path [0]=/opt/ros/indigo/share/ros
+    ROS path [1]=/home/zhan/env/fetch_gazebo/src
+    ROS path [2]=/opt/ros/indigo/share
+    ROS path [3]=/opt/ros/indigo/stacks
+
+这时需要安装：
+```sudo apt-get install ros-indigo-rgbd-launch```
