@@ -36,3 +36,6 @@ ros-indigo自带的本来是Gazebo2，但是Gazebo中自己导入obj文件的功
 
 这时需要安装：
 ```sudo apt-get install ros-indigo-rgbd-launch```
+
+### 卸载回Gazebo2
+和安装的流程差不多，不过有些```libsdformatxxxx```这种库文件要慢慢找，一个一个卸载。具体的可以先下载gazebo2的时候看哪些文件不让下载一个一个试。
