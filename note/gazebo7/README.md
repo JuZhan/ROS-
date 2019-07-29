@@ -13,6 +13,7 @@ ros-indigo自带的本来是Gazebo2，但是Gazebo中自己导入obj文件的功
  ```
  sudo apt-get install ros-indigo-gazebo7-ros
  sudo apt-get install ros-indigo-gazebo7-ros-control
+ sudo apt-get install ros-indigo-gazebo7-...(全部)
 ```
 但是这样会把fetch_gazebo的ROS包都一起被删除，由于Gazebo7的存在，Fetch官方提供的包不能直接下载和使用。
 
@@ -38,7 +39,6 @@ ros-indigo自带的本来是Gazebo2，但是Gazebo中自己导入obj文件的功
 ```sudo apt-get install ros-indigo-rgbd-launch```
 
 Gazebo版本替换的时候，原先使用的Gazebo的项目得删除掉`devel`和`build`文件夹，重新`catkin_make`。
-
 
 ### 卸载回Gazebo2
 和安装的流程差不多，不过有些`libsdformatxxxx`这种库文件要慢慢找，一个一个卸载。具体的可以先下载Gazebo2的时候看哪些文件不让下载一个一个试。
