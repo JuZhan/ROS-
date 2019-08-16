@@ -11,6 +11,8 @@
 
 ### [Gazebo](./note/gazebo7/README.md)
 
+### [OMPL](./note/OMPL_note.md)
+
 ### [Simox](./note/simox.md)
 
 ### [Rviz](./note/rviz.md)
