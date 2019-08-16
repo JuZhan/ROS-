@@ -1,8 +1,7 @@
 OMPL (open motion planning liberay)
 ----
 
-这个手臂规划库是基于sampling的方法，里面提供了不少方案
-> planner types [:link:](https://ompl.kavrakilab.org/planners.html)
+这个手臂规划库是基于sampling的方法，里面提供了不少方案[:link:](https://ompl.kavrakilab.org/planners.html)
 
 moveit也是将这个作为手臂规划的默认方法。
 
@@ -12,3 +11,10 @@ moveit也是将这个作为手臂规划的默认方法。
 如果想知道自己的默认是什么可以在规划的时候看一下运行`moveit_group.launch`的终端显示的内容。
 
 不过我使用的是ubuntu14.14，indigo在2014年出现，所以它里面的并没有更新默认方法。[设置自己的默认方案](https://github.com/ros-planning/moveit_ros/pull/625#issuecomment-158246373)
+
+
+### TODO
+除了OMPL，还有专门针对路径优化的规划方法：[CHOMP](https://ros-planning.github.io/moveit_tutorials/doc/chomp_planner/chomp_planner_tutorial.html)。
+
+虽然`fetch_moveit_config`里面有CHOMP的配置文件，但是运行的时候被告知没有这个插件。
+
