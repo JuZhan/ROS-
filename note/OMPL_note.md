@@ -29,12 +29,12 @@ moveit也是将这个作为手臂规划的默认方法。
 这是indigo版本的源码以及操作： > https://github.com/ros-industrial/industrial_moveit/tree/indigo-devel
 
 首先先下载`STOMP`的库：
-```sudo apt-get install ros-indigo-stomp-moveit
-```
+```sudo apt-get install ros-indigo-stomp-moveit```
 它会同时把`stomp-core`和`stomp-moveit`下载下来，其他的就不用了。然后根据[这里](http://docs.ros.org/melodic/api/moveit_tutorials/html/doc/stomp_planner/stomp_planner_tutorial.html)创建配置文件。
 
 如果这个时候允许手臂规划的话会报错：
+
 `[ERROR] [1566220817.427105460, 4597.815000000]: STOMP Start joint pose is out of bounds
 [ERROR] [1566220817.427169435, 4597.816000000]: STOMP failed to get the start and goal positions`
 
-他们的README里面写了，这个算法得提供一个初始姿态`Start pose`，最直接的方法就是在Rviz的`MotionPlanning`这个插件里面操作，在`Planning`一栏的`Start pose`有`Update`的操作，点击后，才可以进行手臂规划，很麻烦。不过好像indigo版本只能先这样？2018年底作者说他后面改moveit源代码才实现了默认不用设置，暂时无法用`MoveGroup`进行操作。从`melodic`版本的README来看他们已经改成了默认的方法，但是我不知道怎么来弄了。
+他们的README里面写了，这个算法得提供一个初始姿态`Start pose`，最直接的方法就是在Rviz的`MotionPlanning`这个插件里面操作，在`Planning`一栏的`Start pose`有`Update`的操作，点击后，才可以进行手臂规划，很麻烦。不过好像indigo版本只能先这样？[2018年底](https://github.com/ros-industrial/industrial_moveit/issues/64)作者说他后面改moveit源代码才实现了默认不用设置，暂时无法用`MoveGroup`进行操作。从`melodic`版本的README来看他们已经改成了默认的方法，但是我不知道怎么来弄了。
