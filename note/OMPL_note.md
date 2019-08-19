@@ -12,6 +12,11 @@ moveit也是将这个作为手臂规划的默认方法。
 
 不过我使用的是ubuntu14.14，indigo在2014年出现，所以它里面的并没有更新默认方法。[设置自己的默认方案](https://github.com/ros-planning/moveit_ros/pull/625#issuecomment-158246373)
 
+----
+
+后来我又发现，虽然配置文件改了，RVIZ的moveit插件里面确实是`RRTConnect`的方法，然而我用代码写`move_group`的时候调用的还是`LBK`，不过也只要多一句代码就行：
+```move_group.setPlannerId("RRTConnectkConfigDefault")```
+
 
 ### TODO
 除了OMPL，还有专门针对路径优化的规划方法：[CHOMP](https://ros-planning.github.io/moveit_tutorials/doc/chomp_planner/chomp_planner_tutorial.html)。
