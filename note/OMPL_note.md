@@ -29,7 +29,8 @@ moveit也是将这个作为手臂规划的默认方法。
 这是indigo版本的源码以及操作：https://github.com/ros-industrial/industrial_moveit/tree/indigo-devel
 
 首先先下载`STOMP`的库：
-```sudo apt-get install ros-indigo-stomp-moveit```
+
+     sudo apt-get install ros-indigo-stomp-moveit
 
 它会同时把`stomp-core`和`stomp-moveit`下载下来，其他的就不用了。然后根据[这里](http://docs.ros.org/melodic/api/moveit_tutorials/html/doc/stomp_planner/stomp_planner_tutorial.html)创建配置文件。
 
